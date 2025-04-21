@@ -1,0 +1,17 @@
+Functional Requirements:
+1.เรียก API
+    -ใช้ method GET จาก API: https://whoa.onrender.com/whoas/random?results=20
+2.แสดงรายการหนัง
+    -แสดง title และข้อมูลอื่น ๆ ที่เหมาะสม (เช่น รูปภาพ image, ปีที่ฉาย year, หรือ description ถ้ามี)
+    -ใช้ ListView.builder แสดงรายการ
+3.ค้นหาชื่อหนัง (Search)
+    -มีช่องค้นหาด้านบนของหน้าจอ
+    -ขณะที่ผู้ใช้พิมพ์ในช่องค้นหา ให้กรองชื่อหนังจาก list ที่โหลดมาแล้ว (ไม่ต้องเรียก API ใหม่)
+    -ใช้ Reactive State ของ GetX (RxList, RxString) เพื่อทำให้ UI อัปเดตอัตโนมัติ
+4.State Management ด้วย GetX
+    -ใช้ Controller แยกไฟล์ออกชัดเจน
+    -ใช้ Obx() เพื่อทำให้ UI อัปเดตอัตโนมัติเมื่อค่ามีการเปลี่ยนแปลง
+
+-Loading state (isLoading) ด้วย RxBool และ Obx
+-มีหน้าแสดงรายละเอียดเมื่อกดที่หนังแต่ละเรื่อง
+-แบ่งโครงสร้างโค้ดชัดเจน: models/, controllers/, views/, services/...
